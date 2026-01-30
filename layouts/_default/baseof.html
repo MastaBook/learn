@@ -15,7 +15,7 @@
     {{ "<![endif]-->" | safeHTML }}
   </head>
 
-  <body data-url="{{ $.GitInfo }}" id="{{ ($.URL | trim "/" | replaceRE "[/.]" "-" | default "error") }}-page">
+  <body data-url="{{ $.GitInfo }}" id="{{ (.URL | trim "/" | replaceRE "[/.]" "-" | default "error") }}-page">
 
     <div id="container">
       <header>
