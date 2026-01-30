@@ -15,7 +15,12 @@
     {{ "<![endif]-->" | safeHTML }}
   </head>
 
-  <body data-url="{{ $.GitInfo }}" id="{{ .RelPermalink | trim "/" | replaceRE "[/.]" "-" }}-page" data-relpermalink="{{ .RelPermalink }}" data-permalink="{{ .Permalink }}" data-url="{{ .URL }}" data-file="{{ .File.Path }}">
+  <body data-url="{{ $.GitInfo }}" id="{{ replaceRE "[/.]" "-" (trim .RelPermalink "/") }}-page"
+    data-test-raw="{{ .RelPermalink }}"
+    data-test-trim-pipe="{{ .RelPermalink | trim "/" }}"
+    data-test-trim-func="{{ trim .RelPermalink "/" }}"
+    data-test-replace="{{ .RelPermalink | replaceRE "[/.]" "-" }}"
+  >
 
     <div id="container">
       <header>
