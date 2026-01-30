@@ -15,7 +15,7 @@
     {{ "<![endif]-->" | safeHTML }}
   </head>
 
-  <body data-url="{{ $.GitInfo }}" id="{{ $.URL | trim "/" | replace . "." "-" | urlize }}-page">
+  <body data-url="{{ $.GitInfo }}" id="{{ .RelPermalink | anchorize }}-page">
     <div id="container">
       <header>
         <div class="inner"><a id="back" href="/"><span class="morewords">Back to JS Bin</span></a>
